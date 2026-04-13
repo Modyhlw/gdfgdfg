@@ -1,0 +1,284 @@
+/* ========================================
+   SETTINGS PAGE - SIMPLIFIED & READABLE
+   Netflix-inspired dark theme
+   Preserves exact original visual appearance
+   ======================================== */
+
+/* CSS Custom Properties for consistency & easy maintenance */
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #1a1a1a;
+  --bg-hover: #252525;
+  --border-light: #222;
+  --border-medium: #333;
+  --border-heavy: #444;
+  --text-primary: #ffffff;
+  --text-muted: #888;
+  --text-dim: #777;
+  --text-dimmed: #555;
+  --text-faint: #444;
+  --accent-red: #e50914;
+  --success-green: #34c759;
+  
+  /* Icon colors & backgrounds */
+  --icon-blue: #007aff;
+  --icon-blue-bg: rgba(0, 122, 255, 0.2);
+  --icon-orange: #ff9f0a;
+  --icon-orange-bg: rgba(255, 159, 10, 0.2);
+  --icon-purple: #af52de;
+  --icon-purple-bg: rgba(175, 82, 222, 0.2);
+  --icon-green: #34c759;
+  --icon-green-bg: rgba(52, 199, 89, 0.2);
+  --icon-red: #ff3b30;
+  --icon-red-bg: rgba(255, 59, 48, 0.2);
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+}
+
+/* ========================================
+   CONTAINER & LAYOUT
+   ======================================== */
+.settings-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 20px;
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 30px 0;
+}
+
+.settings-header h1 {
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
+
+.back-btn {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ========================================
+   PROFILE CARD
+   ======================================== */
+.profile-card {
+  background: var(--bg-secondary);
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  border: 1px solid var(--border-light);
+}
+
+.profile-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 2px solid var(--accent-red);
+}
+
+.profile-info h3 {
+  font-size: 1.1rem;
+}
+
+.profile-info p {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.profile-card i {
+  margin-left: auto;
+  color: var(--text-dimmed);
+}
+
+/* ========================================
+   SECTIONS & SETTING ITEMS
+   ======================================== */
+.settings-list {
+  /* Container for all settings */
+}
+
+.section-title {
+  color: var(--accent-red);
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 20px 0 10px 5px;
+  letter-spacing: 1px;
+}
+
+.setting-item {
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.setting-item:hover {
+  background: var(--bg-hover);
+}
+
+/* Icon Boxes - Unified with CSS vars */
+.icon-box {
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.icon-box.blue {
+  background: var(--icon-blue-bg);
+  color: var(--icon-blue);
+}
+
+.icon-box.orange {
+  background: var(--icon-orange-bg);
+  color: var(--icon-orange);
+}
+
+.icon-box.purple {
+  background: var(--icon-purple-bg);
+  color: var(--icon-purple);
+}
+
+.icon-box.green {
+  background: var(--icon-green-bg);
+  color: var(--icon-green);
+}
+
+.icon-box.red {
+  background: var(--icon-red-bg);
+  color: var(--icon-red);
+}
+
+/* Item Info & Text */
+.item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.setting-item span {
+  font-size: 0.95rem;
+}
+
+.sub-text {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.arrow {
+  color: var(--text-faint);
+  font-size: 0.8rem;
+}
+
+.data-info {
+  font-size: 0.8rem;
+  color: var(--accent-red);
+  font-weight: bold;
+}
+
+/* ========================================
+   FORM CONTROLS
+   ======================================== */
+.custom-select {
+  background: #222;
+  color: white;
+  border: 1px solid var(--border-heavy);
+  padding: 5px 10px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #444;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--accent-red);
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* ========================================
+   RESPONSIVE (unchanged)
+   ======================================== */
+@media (max-width: 480px) {
+  .settings-container {
+    padding: 15px;
+  }
+}
+

@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 8px; 
+}
+
+
+::-webkit-scrollbar-track {
+    background: #111; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e50914; 
+    border-radius: 10px;  
+    border: 2px solid #111; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b20710; 
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #111;
+    color: white;
+    padding-bottom: 70px; 
+}
+
+
+header {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    background-color: #000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span { color: #e50914; }
+
+.search-container {
+    display: flex;
+    background: #333;
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: 30%;
+}
+
+.search-container input {
+    background: none;
+    border: none;
+    color: white;
+    padding: 5px;
+    width: 100%;
+    outline: none;
+}
+
+.search-container button {
+    background: none;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon-label {
+    cursor: pointer;
+    z-index: 10;
+    display: block;
+    margin-left: 20px;
+
+}
+
+.menu-icon-label span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background-color: #e50914;
+    margin-bottom: 6px;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.menu-icon-label span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background-color: #e50914;
+    margin-bottom: 6px;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; 
+    width: 280px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    transition: 0.5s ease;
+    padding-top: 80px;
+    border-left: 1px solid rgba(229, 9, 20, 0.3); 
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 5px; 
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #111; 
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #e50914; 
+    border-radius: 10px;
+}
+
+#menu-toggle:checked ~ .sidebar {
+    right: 0;
+   
+}
+
+.sidebar h3 {
+    color: #e50914;
+    padding: 25px 30px 10px 0; 
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    text-align: right; 
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px 30px;
+    color: white;
+    text-decoration: none; 
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s;
+    text-align: right; 
+}
+
+.sidebar a:hover {
+    background: linear-gradient(90deg, transparent, rgba(229, 9, 20, 0.2));
+    color: #e50914;
+    border-right: 4px solid #e50914; 
+    padding-right: 35px;
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.hero {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    margin-top: 68px;
+}
+
+.hero-content h1 { 
+    font-size: 2rem; 
+    margin-bottom: 10px; 
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8); 
+    font-weight: 900;
+}
+
+.play-btn {
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+
+.movie-section { padding: 20px; }
+
+.movie-grid {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.card{
+    width:200px;
+    height:300px;
+    position:relative;
+    overflow:hidden;
+    border-radius:10px;
+    transition:0.4s;
+    cursor:pointer;
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    position:absolute;
+    transition:0.4s;
+}
+
+/* الصورة الثانية */
+.card .img2{
+    opacity:0;
+}
+
+/* التفاصيل */
+.info{
+    position:absolute;
+    bottom:-100px;
+    color:white;
+    background:linear-gradient(transparent,black);
+    padding:10px;
+    width:100%;
+    transition:0.4s;
+}
+
+/* hover */
+.card:hover{
+    transform:scale(1.1);
+}
+
+.card:hover .img2{
+    opacity:1;
+}
+
+.card:hover .info{
+    bottom:0;
+}
